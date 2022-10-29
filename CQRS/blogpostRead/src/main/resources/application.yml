@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: blogPost
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cqrs
+    password: cqrs
+
+rabbitmq:
+  queue:
+    name: cqrs_blog_post
+  exchange:
+    name: cqrs_blog_post_exchange
+  routing:
+    key: cqrs_blog_post_routing_key

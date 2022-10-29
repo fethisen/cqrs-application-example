@@ -1,0 +1,28 @@
+server:
+  port: 8082
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: blogPostOutbox
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cqrs
+    password: cqrs
+
+rabbitmq:
+  queue:
+    publisher:
+      name: cqrs_polling_listener
+    listener:
+      name: cqrs_polling_publisher
+  exchange:
+    name: cqrs_polling_publisher_exchange
+  routing:
+    publisher:
+      key: cqrs_polling_routing_key_listener
+    listener:
+      key: cqrs_polling_routing_key_publisher

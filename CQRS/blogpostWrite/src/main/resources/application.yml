@@ -1,0 +1,26 @@
+server:
+  port : 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/blogPost
+    username: dpicman
+    password: dpicman
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cqrs
+    password: cqrs
+
+rabbitmq:
+  queue:
+    name: cqrs_blog_post
+  exchange:
+    name: cqrs_blog_post_exchange
+  routing:
+    key: cqrs_blog_post_routing_key

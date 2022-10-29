@@ -1,0 +1,12 @@
+server:
+  port : 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/blogPost
+    username: dpicman
+    password: dpicman
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create

@@ -1,0 +1,15 @@
+server:
+  port : 8083
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/singleDB
+    username: dpicman
+    password: dpicman
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+app:
+  write:
+    enabled: false
